@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 
-#engine = create_engine('postgresql://postgres:12345@192.168.1.201:5432/test')
+#engine = create_engine('postgresql://postgres:12345@{}:5432/test'.format()
 
 st.title('Evans Home Weather')
 
@@ -11,4 +11,4 @@ st.title('Evans Home Weather')
 
 #st.write(df)
 
-st.write(st.secrets["postgres"]["host"])
+st.write(st.secrets["postgres"])
