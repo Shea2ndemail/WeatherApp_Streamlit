@@ -11,4 +11,4 @@ st.title('Evans Home Weather')
 
 #st.write(df)
 
-st.write(st.secrets["postgres"])
+st.write(st.secrets["postgres"]["host"])
