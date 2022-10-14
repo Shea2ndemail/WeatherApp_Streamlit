@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://{}:{}@{}:{}/{}'.format(st.secrets["postgres"]["user"], st.secrets["postgres"]["password"], st.secrets["postgres"]["host"], st.secrets["postgres"]["port"], st.secrets["postgres"]["dbname"])
+engine = create_engine('postgresql://{}:{}@{}:{}/{}'.format(st.secrets["postgres"]["user"], st.secrets["postgres"]["password"], st.secrets["postgres"]["host"], st.secrets["postgres"]["port"], st.secrets["postgres"]["dbname"]))
 
 st.title('Evans Home Weather')
 
