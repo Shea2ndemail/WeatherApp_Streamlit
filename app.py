@@ -1,24 +1,12 @@
 import streamlit as st
-import psycopg2
+import pandas as pd
+import numpy as np
+from sqlalchemy import create_engine
 
-# Initialize connection.
-# Uses st.experimental_singleton to only run once.
-@st.experimental_singleton
-def init_connection():
-    return psycopg2.connect(**st.secrets["postgres"])
+engine = create_engine('postgresql://postgres:12345@192.168.1.201:5432/test')
 
-conn = init_connection()
+st.title('Evans Home Weather')
 
-# Perform query.
-# Uses st.experimental_memo to only rerun when the query changes or after 10 min.
-@st.experimental_memo(ttl=600)
-def run_query(query):
-    with conn.cursor() as cur:
-        cur.execute(query)
-        return cur.fetchall()
+df = pd.read_sql_query('select * from weather_station ORDER BY datetime DESC LIMIT 1',con=engine)
 
-rows = run_query("select * from weather_station ORDER BY datetime DESC LIMIT 1")
-
-# Print results.
-for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+st.write(df)
