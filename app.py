@@ -21,6 +21,7 @@ df = df[df['datetime']>cutoff_dt]
 
 fig, ax = plt.subplots()
 ax.plot(df['datetime'], df['temperature'])
+ax.xaxis.set_major_formatter(dates.DateFormatter('%H:%M'))
 st.pyplot(fig)
 
 df = df.iloc[-5:]
