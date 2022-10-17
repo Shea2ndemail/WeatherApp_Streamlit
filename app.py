@@ -17,3 +17,8 @@ df = df[['datetime', 'ground_temp', 'temperature', 'humidity']]
 
 st.title("Weather Station")
 st.write(df)
+
+if st.button('Say hello'):
+    st.write('Why hello there')
+else:
+    st.write('Goodbye')
