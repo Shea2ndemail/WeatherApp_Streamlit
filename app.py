@@ -18,8 +18,10 @@ engine = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user, pwd, host, por
 df = pd.read_sql_query("select * from weather_station",con=engine)
 df = df[df['datetime']>cutoff_dt]
 
-plt.plot(df['datetime'], df['temperature'])
-st.write(plt)
+
+fig, ax = plt.subplots()
+ax.plot(df['datetime'], df['temperature'])
+st.pyplot(fig)
 
 df = df.iloc[-5:]
 df = df[['datetime', 'ground_temp', 'temperature', 'humidity']]
