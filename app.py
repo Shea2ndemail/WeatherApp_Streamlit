@@ -2,7 +2,7 @@ import streamlit as st
 from sqlalchemy import create_engine
 import pandas as pd
 from datetime import datetime, timedelta
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt, dates
 
 now = datetime.now()
 cutoff_dt = now - timedelta(hours=24)
