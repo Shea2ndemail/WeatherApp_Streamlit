@@ -8,10 +8,10 @@ now = datetime.now()
 cutoff_dt = now - timedelta(hours=24)
 
 host = 'ec2-44-209-24-62.compute-1.amazonaws.com'
-db = 'deqji7h232uoc8'
-user = 'lexcwuwkjlbzok'
+db = 'd1fp8mklv5sglk'
+user = 'tmrjpxsyzlnbdg'
 port = '5432'
-pwd = 'de7a0a0d25bd3a889553353eee682f3742c7fc67890d97b5db9a51f89a7091f8'
+pwd = 'bf5fa66390bf26d445af2bdfbb4ec899b119150825b6008781acd4abfd267e0b'
 
 engine = create_engine('postgresql://{}:{}@{}:{}/{}'.format(user, pwd, host, port, db))
 
