@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt, dates
 now = datetime.now()
 cutoff_dt = now - timedelta(hours=24)
 
-host = 'ec2-44-209-24-62.compute-1.amazonaws.com'
+host = 'ec2-44-210-50-83.compute-1.amazonaws.com'
 db = 'd1fp8mklv5sglk'
 user = 'tmrjpxsyzlnbdg'
 port = '5432'
