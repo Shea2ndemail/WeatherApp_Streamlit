@@ -29,3 +29,7 @@ df = df.iloc[-5:]
 df = df[['datetime', 'ground_temp', 'temperature', 'humidity']]
 
 st.write(df)
+
+test = pd.DataFrame({'a':[2,4,5]})
+
+st.write(test)
