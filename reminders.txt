@@ -30,5 +30,4 @@ git commit -m "message"
 git push origin main
 
 git add --all
-
-test    
+git pull origin main
