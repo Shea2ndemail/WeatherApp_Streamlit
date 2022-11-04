@@ -1,11 +1,8 @@
 
 FROM python:3.7-slim
-COPY . /app
 WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
-EXPOSE 80
-RUN mkdir ~/.streamlit
-RUN cp config.toml ~/.streamlit/config.toml
-WORKDIR /app
-ENTRYPOINT ["streamlit", "run"]
-CMD ["app.py"]
+ENV PORT=8080
+EXPOSE 8080
+ENTRYPOINT ["streamlit", "run", "app.py"]
